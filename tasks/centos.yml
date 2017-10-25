@@ -1,0 +1,6 @@
+---
+- name: Install nfs packages on Centos
+  yum:
+    name: "{{ item }}"
+  with_items:
+    - nfs-utils

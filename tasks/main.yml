@@ -1,0 +1,10 @@
+---
+# tasks file for nfs-server
+
+- name: Install nfs-server on Ubuntu
+  include: ubuntu.yml
+  when: ansible_distribution == "Ubuntu"
+
+- name: Install nfs-server on Centos
+  include: centos.yml
+  when: ansible_distribution == "CentOS"
