@@ -36,5 +36,3 @@ Author Information
 ------------------
 
 This role was created in 2017 by [Andrés Sáncher García](http://andressaga.es/)
-
-This role is based on [Jeff Geerling's](https://github.com/geerlingguy) work
