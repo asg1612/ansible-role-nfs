@@ -1,5 +1,9 @@
 ---
 # tasks file for nfs-server
+- name: Create directory for NFS data
+  file:
+    path: "{{ path_export }}"
+    state: directory
 
 - name: Install nfs-server on Ubuntu
   import_tasks: ubuntu.yml
