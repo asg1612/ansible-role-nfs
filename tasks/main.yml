@@ -8,3 +8,19 @@
 - name: Install nfs-server on Centos
   import_tasks: centos.yml
   when: ansible_distribution == "CentOS"
+
+- name: Enabled nfs-server
+  systemd:
+    name: nfs-server
+    enabled: yes
+
+- name: Start nfs-server
+  systemd:
+    name: nfs-server
+    state: started
+
+- name: Upload config file
+  template:
+    src: exports.j2
+    dest: /etc/exports
+  notify: restart nfs

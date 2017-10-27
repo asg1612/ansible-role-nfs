@@ -6,10 +6,20 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: instance
-    image: centos:7
-  - name: instance
+  - name: instance-1
+    image: geerlingguy/docker-centos7-ansible
+    privileged: True
+    required: True
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    command: /usr/lib/systemd/systemd
+  - name: instance-2
     image: ubuntu:16.04
+    privileged: True
+    required: True
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    command: /lib/systemd/systemd
 provisioner:
   name: ansible
   lint:
