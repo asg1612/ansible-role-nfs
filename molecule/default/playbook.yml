@@ -3,6 +3,8 @@
   hosts: all
   vars:
     path_export: /data/exports/
-    network: 192.168.1.1
+    networks:
+      - 192.168.1.1/24
+      - 10.10.10.1/23
   roles:
     - role: ansible-role-nfs

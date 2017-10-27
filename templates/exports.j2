@@ -1,1 +1,3 @@
-{{ path_export }}   {{ network }}/24(rw,sync,fsid=0,crossmnt,no_subtree_check,no_root_squash)
+{% for network in networks %}
+{{ path_export }}   {{ network }}(rw,sync,fsid=0,crossmnt,no_subtree_check,no_root_squash)
+{% endfor %}

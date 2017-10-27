@@ -14,7 +14,7 @@ platforms:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
     command: /usr/lib/systemd/systemd
   - name: instance-2
-    image: ubuntu:16.04
+    image: geerlingguy/docker-ubuntu1604-ansible
     privileged: True
     required: True
     volumes:

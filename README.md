@@ -10,7 +10,8 @@ None
 
 Role Variables
 --------------
-
+- **path_export**: path for export nfs data
+- **network**: list of networks to allow access. ej: 192.168.1.1/24
 
 
 Dependencies
