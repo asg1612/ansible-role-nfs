@@ -1,24 +1,24 @@
 ---
-# tasks file for nfs-server
+# tasks file for nfs server
 - name: Create directory for NFS data
   file:
     path: "{{ path_export }}"
     state: directory
 
-- name: Install nfs-server on Ubuntu
+- name: Install nfs server on Ubuntu
   import_tasks: ubuntu.yml
   when: ansible_distribution == "Ubuntu"
 
-- name: Install nfs-server on Centos
+- name: Install nfs server on Centos
   import_tasks: centos.yml
   when: ansible_distribution == "CentOS"
 
-- name: Enabled nfs-server
+- name: Enabled nfs server
   systemd:
     name: nfs-server
     enabled: yes
 
-- name: Start nfs-server
+- name: Start nfs server
   systemd:
     name: nfs-server
     state: started
